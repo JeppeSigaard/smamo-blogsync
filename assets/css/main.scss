@@ -1,0 +1,92 @@
+.loading-text{
+    color: #666;
+    height:20px;
+    line-height:20px;
+    
+    img{
+        display: inline-block;
+        vertical-align: middle;
+        width:20px;
+        height:20px;
+    }
+}
+
+.api-settings {
+    max-width:500px;
+    
+    input[type="text"][disabled] {
+        color: #366;
+    }
+}
+
+.sync-list{
+    font-size:0;
+    display: block;
+    
+    
+    li{
+        
+        background: rgba(0,0,0,.05);
+        padding: 5px 0px;
+        display: inline-block;
+        transition: background 150ms;
+        
+        &.success{
+            background: rgba(50,250,90,.1);
+            color: #1c6f2f;
+            
+            .sync-status:before{
+                content: url(../img/success.gif);
+            }
+            
+        }
+        &.error{
+            
+            background: rgba(255,50,50,.1);
+            color: #771414;
+            
+            .sync-status:before{
+                content: url(../img/error.gif);
+            }
+        }
+        
+        &.loading{
+            
+            .sync-status:before{
+                content: url(../img/reload.gif);
+            }
+        
+        }
+            
+        span,input{
+            display: inline-block;
+            vertical-align: middle;
+            height:40px;
+            line-height: 40px;
+            min-width:220px;
+            padding:0px 10px;
+            box-sizing: border-box;
+            margin:0px 5px;
+            font-size:14px;
+            
+            &.sync-status{
+                min-width:50px;
+                position: relative;
+                
+                a{
+                    cursor:pointer;
+                }
+                
+                &:before{
+                    display: block;
+                    height: 0px;
+                    width: 0px;
+                    position: absolute;
+                    right: 32px;
+                    top: 5px;   
+                }
+            }
+        }
+    }
+    
+}
